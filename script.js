@@ -47,4 +47,11 @@ function playRound (){
     // console.log(playRound());
 }
 
-playRound ();
+// playRound ();
+
+function game () {
+    for (let i = 1; i<=5; i++) {
+        playRound();
+    }
+}
+game ();
