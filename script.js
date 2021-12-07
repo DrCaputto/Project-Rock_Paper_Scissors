@@ -13,38 +13,46 @@ function computerPlay (){
 }
 // computerPlay ();
 
-let playerSelection = 'rock';
-let computerSelection = computerPlay();
-
+let playerSelection = '';
 function playRound (){
-    let input = prompt("Chose your weapon: ", 'Rock - Paper - Scissorss');    
+    let input = prompt("Choose your weapon: ", 'Rock - Paper - Scissors');    
     playerSelection = input.toLowerCase();
+    let computerSelection = computerPlay ();
 
     console.log(computerSelection);
     console.log(typeof(computerSelection));
     console.log(playerSelection);
     console.log(typeof(playerSelection));
 
-    if ( playerSelection === '') {
-        alert("You didn't chose the correct weapon!");
+    // window.addEventListener('keydown', function(e){
+    //     if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27) && (e.target.nodeName=='BODY')){
+    //         e.preventDefault();
+    //         return false;
+    //     }
+    // }, true);
+
+    if ( playerSelection === '' || playerSelection === null ) {
+        alert("You didn't choose the correct weapon!");
     } else if ( playerSelection === computerSelection ) {
         alert ("A match was struck... yet no blood was spilt...");
     } else {
-        if ( playerSelection==='rock' && computerSelection === 'scissors' ) {
-            alert("Our mighty rock has crushed the oponent!");      
+        if ( playerSelection === 'rock' && computerSelection === 'scissors' ) {
+            alert("Our mighty rock has crushed the opponent!");      
         } else if ( playerSelection === 'rock' && computerSelection === 'paper' ) {
             alert("Your pathetic rock was no match for the pure shape of the glories A4 sheet of paper!");
         } else if ( playerSelection === 'paper' && computerSelection === 'rock') {
-            alert("Our blessed sheet of paper covered the opponents curesed rocky form and turned him into dust!");
+            alert("Our blessed sheet of paper covered the opponents cursed rocky form and turned him into dust!");
         } else if ( playerSelection === 'paper' && computerSelection === 'scissors') {
-            alert ("Your self-proclaimed paper mesia was cut down by the sharp embrace of the machine!");
+            alert ("Your self-proclaimed paper messiah was cut down by the sharp embrace of the machine!");
         } else if ( playerSelection === 'scissors' && computerSelection === 'paper') {
-            alert ("The sharpnes of our embrace has cut down the false prophet of the A4 church!");
+            alert ("The sharpness of your embrace has cut down the false prophet of the A4 church!");
         } else if ( playerSelection === 'scissors' && computerSelection === 'rock') {
-            alert ("Your so called sharp embrace was shatterd by the might of the rock!");
+            alert ("Your so called sharp embrace was shattered by the might of the rock!");
+        } else {
+            alert ("Are you so bad that you can't choose your weapons correctly?");
         }
     }
-    // console.log(playRound());
+    console.log('  ');      // additional spcae in the consol tab
 }
 
 // playRound ();
@@ -52,6 +60,9 @@ function playRound (){
 function game () {
     for (let i = 1; i<=5; i++) {
         playRound();
+        // computerPlay ();
+        // let computerSelection = computerPlay();
+
     }
 }
 game ();
