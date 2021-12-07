@@ -15,7 +15,10 @@ function computerPlay (){
 
 let playerSelection = '';
 function playRound (){
-    let input = prompt("Choose your weapon: ", 'Rock - Paper - Scissors');    
+    let input = prompt("Choose your weapon: ", 'Rock - Paper - Scissors');  
+    if (input === null) {
+        alert ("So you decided to leave? Good, you didn't stand a chance against me!");
+    }  
     playerSelection = input.toLowerCase();
     let computerSelection = computerPlay ();
 
@@ -31,7 +34,7 @@ function playRound (){
     //     }
     // }, true);
 
-    if ( playerSelection === '' || playerSelection === null ) {
+    if ( playerSelection === '') {
         alert("You didn't choose the correct weapon!");
     } else if ( playerSelection === computerSelection ) {
         alert ("A match was struck... yet no blood was spilt...");
@@ -49,7 +52,7 @@ function playRound (){
         } else if ( playerSelection === 'scissors' && computerSelection === 'rock') {
             alert ("Your so called sharp embrace was shattered by the might of the rock!");
         } else {
-            alert ("Are you so bad that you can't choose your weapons correctly?");
+            alert ("Are you so bad that you can't choose your weapons correctly and lost without a fight?");
         }
     }
     console.log('  ');      // additional spcae in the consol tab
