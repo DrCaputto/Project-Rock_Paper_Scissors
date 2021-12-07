@@ -5,7 +5,7 @@ function computerPlay (){
     const arr=['rock', 'paper', 'scissors'];
 
     // nakon sto se nasumicno izabere broj od 1 do 3, iz Array-a se izvlaci string koji pirpada toj vrednosti i dodeljuje se novoj promenljivoj
-    let rand= arr[Math.floor(Math.random()*arr.length)];     
+    let rand= arr[Math.floor(Math.random()*(arr.length+1))];     
     rand = rand.toString ();
     // console.log(rand);  // nova kreirana promenljiva sadrzi izabranu vrednost i ispisuje je u konzolu
     // console.log(typeof(rand));
@@ -68,4 +68,4 @@ function game () {
 
     }
 }
-game ();
+game ();33
