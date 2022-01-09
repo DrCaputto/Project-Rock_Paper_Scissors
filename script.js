@@ -1,7 +1,7 @@
    // Napraviti funkciju koja nasumicno bira izmedju 3 ponudjena izbora (function computerPlay ())
 function computerPlay (){
 
-    // odrediti objekat koji sadrzi 3 razlicite vrednosti, moja prva ideja je Array sa 3 stringa koja u sebi nose    imena izbora (let arr)
+    // odrediti array koji sadrzi 3 razlicite vrednosti, moja prva ideja je Array sa 3 stringa koja u sebi nose imena izbora (const arr)
     const arr=['rock', 'paper', 'scissors'];
 
     // nakon sto se nasumicno izabere broj od 1 do 3, iz Array-a se izvlaci string koji pirpada toj vrednosti i dodeljuje se novoj promenljivoj
@@ -12,20 +12,23 @@ function computerPlay (){
     return rand;
 }
 // computerPlay ();
+const butRok = document.getElementById('rock')
+const butPap = document.getElementById('paper')
+const butScs = document.getElementById('scissors')
 
 let playerSelection = '';
 function playRound (){
-    let input = prompt("Choose your weapon: ", 'Rock - Paper - Scissors');  
-    if (input === null) {
-        alert ("So you decided to leave? Good, you didn't stand a chance against me!");
-    }  
-    playerSelection = input.toLowerCase();
     let computerSelection = computerPlay ();
+    // let input = prompt("Choose your weapon: ", 'Rock - Paper - Scissors');  
+    // if (input === null) {
+    //     alert ("So you decided to leave? Good, you didn't stand a chance against me!");
+    // }  
+    // playerSelection = input.toLowerCase();
 
-    console.log(computerSelection);
-    console.log(typeof(computerSelection));
-    console.log(playerSelection);
-    console.log(typeof(playerSelection));
+    // console.log(computerSelection);
+    // console.log(typeof(computerSelection));
+    // console.log(playerSelection);
+    // console.log(typeof(playerSelection));
 
     // window.addEventListener('keydown', function(e){
     //     if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27) && (e.target.nodeName=='BODY')){
@@ -60,12 +63,14 @@ function playRound (){
 
 // playRound ();
 
-function game () {
-    for (let i = 1; i<=5; i++) {
-        playRound();
-        // computerPlay ();
-        // let computerSelection = computerPlay();
+// Funkcija ispod je namenjena za loop igre 5 puta; privremeno je gasim jer cu da pokusam da napravim igru tako da se radi koliko god puta korisnik klikce
 
-    }
-}
-game ();
+// function game () {
+//     for (let i = 1; i<=5; i++) {
+//         playRound();
+//         // computerPlay ();
+//         // let computerSelection = computerPlay();
+
+//     }
+// }
+// game ();
