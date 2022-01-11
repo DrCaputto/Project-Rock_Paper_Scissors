@@ -11,18 +11,58 @@ function computerPlay (){
     console.log(typeof(rand));
     return rand;
 }
-
+const bod = document.getElementById('bod');
+const butDiv = document.getElementById('butDiv');
 const butRok = document.getElementById('rock');
 const butPap = document.getElementById('paper');
 const butScs = document.getElementById('scissors');
 
-const divRez = document.createElement('div');
-
-// body.appendChild(divRez);    
-
 butRok.addEventListener('click', playRound);
 butPap.addEventListener('click', playRound);
 butScs.addEventListener('click', playRound);
+
+let scrPl = 0;
+let scrPc = 0;
+
+function playRound(event) {
+    let computerSelection = computerPlay();
+    let playerSelection = event.target.getAttribute('potez');
+    
+    if (playerSelection === computerSelection) {
+        alert ("A match was struck... yet no blood was spilt...");
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        alert("Our blessed sheet of paper covered the opponents cursed rocky form and turned him into dust!");
+        return scrPl = 1;
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        alert ("Your self-proclaimed paper messiah was cut down by the sharp embrace of the machine!");
+        return scrPc = 1;
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        alert("Our mighty rock has crushed the opponent!");
+        return scrPl = 1;
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+      alert("Your pathetic rock was no match for the pure shape of the glories A4 sheet of paper!");
+        return scrPc = 1;
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        alert ("Your so called sharp embrace was shattered by the might of the ancestral rock!");
+        return scrPl = 1;
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        alert ("The sharpness of your embrace has cut down the false prophet of the A4 church!");
+        return scrPc = 1;
+    }
+}
+
+const rezDiv = document.createElement('div');   
+
+const parResTit = document.createElement('p');
+const text = document.createTextNode("Rezultat: " + (scrPl+=scrPl) + " - " + (scrPc+=scrPc));
+parResTit.appendChild(text);
+rezDiv.appendChild(parResTit);
+
+
+bod.appendChild(rezDiv);
+
+
+
 
 // butRok.onclick = () => {
 //     let computerSelection = computerPlay ();
@@ -59,25 +99,25 @@ butScs.addEventListener('click', playRound);
 
 
 
-function playRound (){
-    let computerSelection = computerPlay ();
+// function playRound (){
+//     let computerSelection = computerPlay ();
 
-    if ((butRok.onclick || butPap.onclick || butScs.onclick) === computerSelection) {
-        alert ("A match was struck... yet no blood was spilt...");
-    } else if (butPap.onclick && computerSelection === 'rock') {
-        alert("Our blessed sheet of paper covered the opponents cursed rocky form and turned him into dust!");
-    } else if (butPap.onclick && computerSelection === 'scissors') {
-        alert ("Your self-proclaimed paper messiah was cut down by the sharp embrace of the machine!");
-    } else if (butRok.onclick && computerSelection === 'scissors') {
-        alert("Our mighty rock has crushed the opponent!");
-    } else if (butRok.onclick && computerSelection === 'paper') {
-        alert("Your pathetic rock was no match for the pure shape of the glories A4 sheet of paper!");
-    } else if (butScs.onclick && computerSelection === 'rock') {
-        alert ("Your so called sharp embrace was shattered by the might of the ancestral rock!");
-    } else if (butScs.onclick && computerSelection === 'paper') {
-        alert ("The sharpness of your embrace has cut down the false prophet of the A4 church!");
-    }
- }
+//     if ((butRok.onclick || butPap.onclick || butScs.onclick) === computerSelection) {
+//         alert ("A match was struck... yet no blood was spilt...");
+//     } else if (butPap.onclick && computerSelection === 'rock') {
+//         alert("Our blessed sheet of paper covered the opponents cursed rocky form and turned him into dust!");
+//     } else if (butPap.onclick && computerSelection === 'scissors') {
+//         alert ("Your self-proclaimed paper messiah was cut down by the sharp embrace of the machine!");
+//     } else if (butRok.onclick && computerSelection === 'scissors') {
+//         alert("Our mighty rock has crushed the opponent!");
+//     } else if (butRok.onclick && computerSelection === 'paper') {
+//         alert("Your pathetic rock was no match for the pure shape of the glories A4 sheet of paper!");
+//     } else if (butScs.onclick && computerSelection === 'rock') {
+//         alert ("Your so called sharp embrace was shattered by the might of the ancestral rock!");
+//     } else if (butScs.onclick && computerSelection === 'paper') {
+//         alert ("The sharpness of your embrace has cut down the false prophet of the A4 church!");
+//     }
+//  }
 
 
 
