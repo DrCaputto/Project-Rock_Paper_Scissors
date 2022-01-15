@@ -9,30 +9,36 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="introTextDiv">
+    <div class="title">
         <h1>The Judgement day game!</h1>
-    
-        <h3>Ovde ide neki text koji ce da da neku malo preterano epsku pricu za jako prostu igru koja ce se igrati da bi resila neke egzistencijalne probeme igraca xD
-        </h3>
-    
-        <h4 >Ko prvi skupi 5 poena pobedio je i time spasio ili unistio svet, ez gg wp xD</h4>
     </div>
-    <div id="scores">
-        <p>Rezultat!</p>
+
+     <div class="text">
+        <h3>Looong time ago... OK not so long ago, more like this morning around 7 am, your PC became sentient and decided to chalange you to the ultimate game of Rock-Paper-Scissors, for all the money in your bank account! And before you ask how does it know you bank details, hey it's your PC, it KNOWS EVERYTHING! So your pass and username should be the least of your concerns, imagine if it thought to chalange you and post all you inter... OK we are not going to give it ideas, you have to battle for your bank account!
+    </div>
+
+    <div class="rules">
+        <h4 >First one to gather 5 points "wins" xD</h4>
+    </div>
+    
+    <div class="rezults" id="scores">
+        <p>Score!</p>
         <div id="oponents">
             <div id="player_score">0</div>
             <div id="computer_score">0</div>
         </div>
         <div id="outcome">The match is locked, combat is about to start!</div>
-    </div id="buttons">
+    </div>
+    <div id="buttons">
         <button id="rock" potez="rock">Rock</button>
         <button id="paper" potez="paper">Paper</button>
         <button id="scissors" potez="scissors">Scissors</button>
     </div>
-    <div class="game_over" id="game_over_popup">
-        <p id="popup_log"></p>
-        <button id="play_again">Play again?</button>
-    </div>
-    <!-- <div class="overlay" id="overlay"></div> -->       <!-- tried to set a overlay pop-up with a declaration of the game status and a button for a new game-->
+    <div class="modal_container" id="modal_overlay">    
+        <div class="modal" id="modal_popup">
+            <p id="popup_log"></p>
+            <button id="play_again">Play again?</button>
+        </div>
+    </div>       
 </body>
 </html>

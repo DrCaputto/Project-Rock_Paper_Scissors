@@ -9,13 +9,14 @@ const divPcSc = document.getElementById('computer_score');
 const divOut = document.getElementById('outcome');
 const btnRest = document.getElementById('play_again');
 const popLog = document.getElementById('popup_log');
-// const overlay = document.getElementById('overlay');
-const gameOver = document.getElementById('game_over_popup');
+const overlay = document.getElementById('modal_overlay');
+const gameOver = document.getElementById('modal_popup');
 
 butRok.addEventListener('click', playRound);
 butPap.addEventListener('click', playRound);
 butScs.addEventListener('click', playRound);
-// overlay.addEventListener('click', EndEndGame);
+btnRest.addEventListener('click', EndEndGame);
+
 
 let scrPl=0;
 let scrPc=0;
@@ -59,29 +60,24 @@ function playRound(event) {
     
     if (scrPl==5 && scrPc < 5) {
         divOut.textContent = log + " Now, with the total of 5 victories, you have bested your PC and became the superior being!";
-        resetGame ();
+        popLog.textContent = "You won the game, wp!";
+        StartEndGame ();
     } else if (scrPl < 5 && scrPc == 5 ) {
         divOut.textContent = log + " You fought well but were no match for the procesing power of your PC!";
-        resetGame ();
+        popLog.textContent = "You lost the game, ha ha ha nooob!";
+        StartEndGame ();
     } 
     
     console.log(scrPl)
     console.log(scrPc)
 }
 
-function resetGame () {
-    btnRest.addEventListener('click', () => {
-        document. location. reload();
-    })
+function StartEndGame () {
+    overlay.classList.add('active');
+    resetGame ();
 }
 
-// function StartEndGame () {
-//     gameOver.classList.add('active');
-//     overlay.classList.add('active');
-//     resetGame ();
-// }
-
-// function EndEndGame () {
-//     gameOver.classList.remove('active');
-//     overlay.classList.remove('active');
-// }
+function EndEndGame () {
+    overlay.classList.remove('active');
+    document. location. reload();
+}

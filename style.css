@@ -1,13 +1,93 @@
-#overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #edeef6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* title, text and buttons */
+
+.title {
+    background-color: rgb(121, 9, 143);
+}
+
+.text {
+    background-color: aquamarine;
+}
+
+.rules {
+    background-color: rgb(150, 113, 58);
+}
+
+.rezults {
+    background-color: chartreuse;
+}
+
+#scores {
+    flex-direction: row;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: coral;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal overlay */
+
+.modal_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgb(0, 0, 0); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-  }
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0 , 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.modal_container.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#play_again {
+    background-color: royalblue;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
