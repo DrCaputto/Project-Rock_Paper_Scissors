@@ -20,19 +20,25 @@
     <div class="rules">
         <h4 >First one to gather 5 points "wins" xD</h4>
     </div>
-    
-    <div class="rezults" id="scores">
-        <p>Score!</p>
-        <div id="oponents">
-            <div id="player_score">0</div>
-            <div id="computer_score">0</div>
+    <div id="interface">
+        <div id="buttons">
+            <button id="rock" potez="rock">Rock</button>
+            <button id="paper" potez="paper">Paper</button>
+            <button id="scissors" potez="scissors">Scissors</button>
         </div>
-        <div id="outcome">The match is locked, combat is about to start!</div>
-    </div>
-    <div id="buttons">
-        <button id="rock" potez="rock">Rock</button>
-        <button id="paper" potez="paper">Paper</button>
-        <button id="scissors" potez="scissors">Scissors</button>
+        <div class="rezults" id="scores">
+            <p>Score!</p>
+            <div id="oponents">
+                <div id="player_score">0</div>
+                <div id="computer_score">0</div>
+            </div>
+            <div id="outcome">The match is locked, combat is about to start!</div>
+        </div>
+        <div id="buttonsPc" class="buttonsPc">
+            <button id="rockPc" choice="rock">Rock</button>
+            <button id="paperPc" choice="paper">Paper</button>
+            <button id="scissorsPc" choice="scissors">Scissors</button>
+        </div>
     </div>
     <div class="modal_container" id="modal_overlay">    
         <div class="modal" id="modal_popup">

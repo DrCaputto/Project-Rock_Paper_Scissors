@@ -11,11 +11,17 @@ const btnRest = document.getElementById('play_again');
 const popLog = document.getElementById('popup_log');
 const overlay = document.getElementById('modal_overlay');
 const gameOver = document.getElementById('modal_popup');
+const pcBtn = document.getElementById('buttonsPc');
+const btnRokPc = document.getElementById('rockPc');
+const btnPapPc = document.getElementById('paperPc');
+const btnScsPc = document.getElementById('scissorsPC');
 
 butRok.addEventListener('click', playRound);
 butPap.addEventListener('click', playRound);
 butScs.addEventListener('click', playRound);
 btnRest.addEventListener('click', EndEndGame);
+
+btnRokPc.addEventListener(computerPlay, selectionPcStart);
 
 
 let scrPl=0;
@@ -30,6 +36,17 @@ function computerPlay (){
     console.log(typeof(rand));
     return rand;
 }
+
+function selectionPcStart () {
+    if (rand === 'rock' || 'paper' || 'scissors') {
+        pcBtn.classList.add('active')
+    }
+}
+
+function selectionPcEnd () {
+    pcBtn.classList.remove('active');
+}
+
 
 function playRound(event) {
     let computerSelection = computerPlay();
@@ -58,7 +75,7 @@ function playRound(event) {
     divPcSc.textContent = "PC has won: " + scrPc + " rounds!";
     divOut.textContent = log;
     
-    if (scrPl==5 && scrPc < 5) {
+    if (scrPl == 5 && scrPc < 5) {
         divOut.textContent = log + " Now, with the total of 5 victories, you have bested your PC and became the superior being!";
         popLog.textContent = "You won the game, wp!";
         StartEndGame ();
@@ -74,7 +91,6 @@ function playRound(event) {
 
 function StartEndGame () {
     overlay.classList.add('active');
-    resetGame ();
 }
 
 function EndEndGame () {

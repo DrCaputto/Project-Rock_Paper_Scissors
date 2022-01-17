@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    width: 100%;
 }
 
 body {
@@ -10,6 +11,8 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 /* title, text and buttons */
@@ -36,11 +39,28 @@ body {
 
 #buttons {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    flex-direction: column;
     background-color: coral;
     align-items: center;
     justify-content: center;
+}
+
+#buttonsPc {
+    display: flex;
+    flex-direction: column;
+    background-color: coral;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonsPC.active {
+    color: green;
+}
+
+#interface {
+    display: flex;
+    flex-direction: row;
+    padding:  0;
 }
 
 /* Modal overlay */
