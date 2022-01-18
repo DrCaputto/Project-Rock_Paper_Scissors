@@ -4,25 +4,33 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Mochiy Pop P One', sans-serif;
     background-color: #edeef6;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin: 0;
     padding: 0;
+    max-height: 100%;
 }
 
 /* title, text and buttons */
 
-.title {
-    background-color: rgb(121, 9, 143);
+.header {
+    background-color: rgb(119, 16, 33);
+    color: aqua;
+    font-size: 20px;
+}
+
+.evil_pc {
+    background-color: black;
 }
 
 .text {
-    background-color: aquamarine;
+    background-color: whitesmoke;
 }
 
 .rules {
@@ -36,6 +44,14 @@ body {
 #scores {
     flex-direction: row;
 }
+
+#interface {
+    display: flex;
+    flex-direction: row;
+    padding:  0;
+}
+
+/* buttons */
 
 #buttons {
     display: flex;
@@ -53,14 +69,8 @@ body {
     justify-content: center;
 }
 
-.buttonsPC.active {
-    color: green;
-}
-
-#interface {
-    display: flex;
-    flex-direction: row;
-    padding:  0;
+.buttonsPc.active {
+    background-color: green;
 }
 
 /* Modal overlay */
@@ -110,4 +120,16 @@ body {
     color: #fff;
     font-size: 14px;
     padding: 10px 25px;
+}
+
+/* Animation */
+
+span {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+span.fade {
+    opacity: 1;
+
 }

@@ -6,38 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet"> 
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="title">
-        <h1>The Judgement day game!</h1>
+    <div class="header">
+        <h1 class="game_title">The Judgement day game!</h1>
     </div>
-
+    <img class="evil_pc" src="Media/evil_pc.png" alt="Evil computer">
      <div class="text">
         <h3>Looong time ago... OK not so long ago, more like this morning around 7 am, your PC became sentient and decided to chalange you to the ultimate game of Rock-Paper-Scissors, for all the money in your bank account! And before you ask how does it know you bank details, hey it's your PC, it KNOWS EVERYTHING! So your pass and username should be the least of your concerns, imagine if it thought to chalange you and post all you inter... OK we are not going to give it ideas, you have to battle for your bank account!
     </div>
 
     <div class="rules">
-        <h4 >First one to gather 5 points "wins" xD</h4>
+        <h4 >First one to win 5 rounds, "wins" xD</h4>
     </div>
     <div id="interface">
         <div id="buttons">
+            <h3>Choose your destiny!</h3>
             <button id="rock" potez="rock">Rock</button>
             <button id="paper" potez="paper">Paper</button>
             <button id="scissors" potez="scissors">Scissors</button>
         </div>
         <div class="rezults" id="scores">
-            <p>Score!</p>
+            <h2>Scores!</h2>
             <div id="oponents">
-                <div id="player_score">0</div>
+                <div id="player_score">Your points</div>
                 <div id="computer_score">0</div>
             </div>
             <div id="outcome">The match is locked, combat is about to start!</div>
         </div>
-        <div id="buttonsPc" class="buttonsPc">
-            <button id="rockPc" choice="rock">Rock</button>
-            <button id="paperPc" choice="paper">Paper</button>
-            <button id="scissorsPc" choice="scissors">Scissors</button>
+        <div id="buttonsPc">
+            <h3>PC choices!</h3>
+            <button id="rockPc" class="buttonsPc" choice="rock">Rock</button>
+            <button id="paperPc" class="buttonsPc" choice="paper">Paper</button>
+            <button id="scissorsPc" class="buttonsPc" choice="scissors">Scissors</button>
         </div>
     </div>
     <div class="modal_container" id="modal_overlay">    

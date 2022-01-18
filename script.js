@@ -14,15 +14,44 @@ const gameOver = document.getElementById('modal_popup');
 const pcBtn = document.getElementById('buttonsPc');
 const btnRokPc = document.getElementById('rockPc');
 const btnPapPc = document.getElementById('paperPc');
-const btnScsPc = document.getElementById('scissorsPC');
+const btnScsPc = document.getElementById('scissorsPc');
+
+// animation selectors
+
+const title = document.querySelector('.game_title');
+const strTitle = title.textContent;
+const splitTitle = strTitle.split("");
+title.textContent = '';
+
+for(let i = 0; i<splitTitle.length; i++) {
+    title.innerHTML += "<span>" + splitTitle[i] + "</span>";
+}
+
+let char = 0;
+let timer = setInterval (onTick, 50);
+
+function onTick () {
+    const span = title.querySelectorAll('span')[char];
+    span.classList.add('fade');
+    char++;
+
+    if (char ===splitTitle.length) {
+        complete();
+        return;
+    }
+}
+
+function complete () {
+    clearInterval(timer);
+    timer = null;
+}
 
 butRok.addEventListener('click', playRound);
 butPap.addEventListener('click', playRound);
 butScs.addEventListener('click', playRound);
 btnRest.addEventListener('click', EndEndGame);
 
-btnRokPc.addEventListener(computerPlay, selectionPcStart);
-
+// Game function for computer and player choices, comparisons and scores
 
 let scrPl=0;
 let scrPc=0;
@@ -34,21 +63,28 @@ function computerPlay (){
     rand = rand.toString ();
     console.log(rand);
     console.log(typeof(rand));
+
+    if (rand === 'rock') {
+    btnRokPc.classList.add('active');
+    } else if ( rand === 'paper') {
+    btnPapPc.classList.add('active'); 
+    } else if ( rand === 'scissors'){
+    btnScsPc.classList.add('active');
+    }
+
     return rand;
 }
 
-function selectionPcStart () {
-    if (rand === 'rock' || 'paper' || 'scissors') {
-        pcBtn.classList.add('active')
-    }
-}
 
 function selectionPcEnd () {
-    pcBtn.classList.remove('active');
+    btnRokPc.classList.remove('active');
+    btnScsPc.classList.remove('active');
+    btnPapPc.classList.remove('active');
 }
 
 
 function playRound(event) {
+    selectionPcEnd ()
     let computerSelection = computerPlay();
     let playerSelection = event.target.getAttribute('potez');
     let log ='';
@@ -88,6 +124,8 @@ function playRound(event) {
     console.log(scrPl)
     console.log(scrPc)
 }
+
+// Overlay activation/removal and game reset
 
 function StartEndGame () {
     overlay.classList.add('active');
